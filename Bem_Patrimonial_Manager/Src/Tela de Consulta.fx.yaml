@@ -1,0 +1,1072 @@
+"'Tela de Consulta' As screen":
+    Fill: =RGBA(242, 242, 242, 1)
+
+    Container_Consulta As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =1136
+        Width: =640
+        ZIndex: =1
+
+        "gal_Bem_Patrimoniado_Consulta As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DelayItemLoading: =true
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =497
+            Items: |-
+                =Filter(
+                    Bem_Patrimonial,
+                    IsBlank(cmb_Descricao_Filtro_Tela_Consulta.Selected.Value) || cmb_Descricao_Filtro_Tela_Consulta.Selected.Value = Descricao,
+                    IsBlank(cmb_Responsavel_Filtro_Tela_Consulta.Selected.displayName) || LookUp(All_Users, cmb_Responsavel_Filtro_Tela_Consulta.Selected.displayName = displayName,ID) = ID_Responsavel,
+                    StartsWith(CodigoBarras,txt_Num_Patrimonio_Filtro_Tela_Consulta.Text)
+                )
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            ShowScrollbar: =false
+            TemplatePadding: =0
+            TemplateSize: =286
+            Width: =524
+            X: =58
+            Y: =523
+            ZIndex: =1
+
+            lbl_Num_Patrimonio_Tela_Consulta As label:
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =60
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =16
+                Text: |-
+                    =Concatenate("Nº de Patrimônio: ",ThisItem.CodigoBarras)
+                Width: =278
+                X: =10
+                Y: =6
+                ZIndex: =2
+
+            lbl_Serial_Number_Tela_Consulta As label:
+                Font: =Font.'Segoe UI'
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =14
+                Text: |-
+                    =Concatenate("Serial: ",ThisItem.SerialNumber)
+                Width: =500
+                X: =10
+                Y: =170
+                ZIndex: =3
+
+            lbl_Status_Tela_Consulta As label:
+                Font: =Font.'Segoe UI'
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =14
+                Text: |-
+                    =Concatenate("Status: ",ThisItem.Status)
+                Width: =261
+                X: =10
+                Y: =74
+                ZIndex: =5
+
+            lbl_Responsavel_Tela_Consulta As label:
+                Font: =Font.'Segoe UI'
+                OnSelect: =Select(Parent)
+                PaddingBottom: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =14
+                Text: |-
+                    =Concatenate("Responsável: ",LookUp(All_Users,ThisItem.ID_Responsavel = ID,displayName))
+                Width: =500
+                X: =10
+                Y: =122
+                ZIndex: =6
+
+            Rectangle1 As rectangle:
+                Fill: =RGBA(0, 32, 96, 1)
+                Height: =256
+                OnSelect: =Select(Parent)
+                Width: =10
+                Y: =6
+                ZIndex: =7
+
+            Button1 As button:
+                BorderColor: =RGBA(0, 32, 96, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =256
+                HoverBorderColor: =
+                HoverColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =
+                OnSelect: |-
+                    =UpdateContext(
+                        {
+                            locTicket: ThisItem,
+                            locIdModalMovimetancao: 1
+                        }
+                    )
+                PressedColor: =
+                PressedFill: =
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Size: =24
+                Text: =""
+                Width: =520
+                Y: =6
+                ZIndex: =8
+
+            grp_bem_patrimonial As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =12
+
+                lbl_Descricao_Tela_Consulta As label:
+                    Align: =Align.Center
+                    AutoHeight: =true
+                    Color: =RGBA(0, 0, 0, 1)
+                    Height: =60
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =ThisItem.Descricao
+                    X: =288
+                    Y: =68
+                    ZIndex: =1
+
+                Image1 As image:
+                    Height: =50
+                    Image: =ThisItem.Imagem_Bem_Patrimoniado
+                    Width: =50
+                    X: =338
+                    Y: =18
+                    ZIndex: =11
+
+            grp_localizacao_Tela_Consulta As group:
+                Height: =5
+                Width: =5
+                X: =-25
+                Y: =6
+                ZIndex: =13
+
+                lbl_Localizacao_Tela_Consulta As label:
+                    Color: =RGBA(0, 0, 0, 1)
+                    DisplayMode: =DisplayMode.View
+                    Font: =Font.'Segoe UI'
+                    Height: =36
+                    OnSelect: =
+                    PaddingBottom: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =ThisItem.Localizacao
+                    Width: =198
+                    X: =50
+                    Y: =218
+                    ZIndex: =9
+
+                Icon2 As icon.Waypoint:
+                    Color: =RGBA(0, 32, 96, 1)
+                    DisplayMode: =DisplayMode.View
+                    Height: =30
+                    Icon: =Icon.Waypoint
+                    OnSelect: =
+                    Width: =30
+                    X: =10
+                    Y: =221
+                    ZIndex: =10
+
+        lbl_Title_Consulta As label:
+            Align: =Align.Center
+            Color: =RGBA(0, 32, 96, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =44
+            Size: =21
+            Text: ="Bens Patrimoniais"
+            Width: =356
+            X: =142
+            Y: =49
+            ZIndex: =2
+
+        lbl_Resultados As label:
+            Color: =RGBA(0, 32, 96, 1)
+            Font: =Font.'Segoe UI'
+            Height: =44
+            PaddingLeft: =0
+            Size: =16
+            Text: ="Resultados"
+            Width: =356
+            X: =58
+            Y: =479
+            ZIndex: =14
+
+        grp_responsavel_Tela_Consulta As group:
+            Height: =5
+            Width: =5
+            X: =60
+            Y: =60
+            ZIndex: =14
+
+            Label1 As label:
+                Color: =RGBA(0, 32, 96, 1)
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =35
+                PaddingLeft: =0
+                Size: =16
+                Text: ="Responsável"
+                Width: =133
+                X: =58
+                Y: =345
+                ZIndex: =5
+
+            "'borda arredondada_responsavel' As groupContainer.manualLayoutContainer":
+                BorderColor: =RGBA(0, 32, 96, 1)
+                BorderThickness: =2
+                Height: =60
+                Width: =524
+                X: =58
+                Y: =380
+                ZIndex: =13
+
+                cmb_Responsavel_Filtro_Tela_Consulta As combobox:
+                    BorderColor: =RGBA(0, 32, 96, 1)
+                    BorderStyle: =BorderStyle.None
+                    ChevronBackground: =RGBA(0, 0, 0, 0)
+                    ChevronFill: =RGBA(0, 32, 96, 1)
+                    ChevronHoverBackground: =
+                    DisplayFields: =["field_1"]
+                    Font: =Font.'Segoe UI'
+                    Height: =60
+                    HoverBorderColor: =
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    InputTextPlaceholder: =""
+                    Items: =All_Users.displayName
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    SearchFields: =["field_1"]
+                    SearchItems: =Search(All_Users.displayName,cmb_Responsavel_Filtro_Tela_Consulta.SearchText,"field_1")
+                    SelectionFill: =RGBA(0, 0, 0, 0)
+                    SelectMultiple: =false
+                    Size: =16
+                    Width: =524
+                    ZIndex: =1
+
+        grp_nome_ativo_Tela_Consulta As group:
+            Height: =5
+            Width: =5
+            X: =60
+            Y: =60
+            ZIndex: =14
+
+            Label1_1 As label:
+                Color: =RGBA(0, 32, 96, 1)
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =35
+                PaddingLeft: =0
+                Size: =16
+                Text: ="Nome do ativo"
+                Width: =156
+                X: =58
+                Y: =244
+                ZIndex: =7
+
+            "'borda arredondada_descricao' As groupContainer.manualLayoutContainer":
+                BorderColor: =RGBA(0, 32, 96, 1)
+                BorderThickness: =2
+                Height: =60
+                Width: =524
+                X: =58
+                Y: =279
+                ZIndex: =12
+
+                cmb_Descricao_Filtro_Tela_Consulta As combobox:
+                    BorderColor: =RGBA(0, 32, 96, 1)
+                    BorderStyle: =BorderStyle.None
+                    ChevronBackground: =RGBA(0, 0, 0, 0)
+                    ChevronFill: =RGBA(0, 32, 96, 1)
+                    ChevronHoverBackground: =
+                    DisplayFields: =["Value"]
+                    Font: =Font.'Segoe UI'
+                    Height: =60
+                    HoverBorderColor: =
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    InputTextPlaceholder: =""
+                    Items: =["Tela", "Armário"]
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    SearchFields: =["Value"]
+                    SearchItems: =Search(["Tela", "Armário"],cmb_Descricao_Filtro_Tela_Consulta.SearchText,"Value")
+                    SelectionColor: =RGBA(0, 0, 0, 0)
+                    SelectionFill: =RGBA(0, 0, 0, 0)
+                    SelectMultiple: =false
+                    Size: =16
+                    Width: =524
+                    ZIndex: =1
+
+        btn_Finalizar_Novo_Cadastro_3 As button:
+            Fill: =RGBA(0, 32, 96, 1)
+            Height: =60
+            OnSelect: |-
+                =Refresh(Bem_Patrimonial);Refresh(Movimentacao_Bem_Patrimonial);
+                Navigate('Tela de Cadastro',ScreenTransition.Fade)
+            Size: =18
+            Text: ="Cadastrar novo"
+            Width: =270
+            X: =185
+            Y: =1033
+            ZIndex: =15
+
+        grp_num_patrimonio_Tela_Consulta As group:
+            Height: =5
+            Width: =5
+            X: =60
+            Y: =60
+            ZIndex: =17
+
+            txt_Num_Patrimonio_Filtro_Tela_Consulta As text:
+                BorderColor: =RGBA(0, 32, 96, 1)
+                Default: =""
+                Font: =Font.'Segoe UI'
+                Format: =TextFormat.Number
+                Height: =60
+                HintText: ="Search"
+                PaddingLeft: =50
+                Size: =16
+                Width: =524
+                X: =58
+                Y: =169
+                ZIndex: =8
+
+            Label1_2 As label:
+                Color: =RGBA(0, 32, 96, 1)
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =35
+                PaddingLeft: =0
+                Size: =16
+                Text: ="Nº Patrimônio"
+                Width: =156
+                X: =58
+                Y: =133
+                ZIndex: =10
+
+            Icon1 As icon.Search:
+                Color: =RGBA(0, 32, 96, 1)
+                DisplayMode: =DisplayMode.View
+                Height: =30
+                Icon: =Icon.Search
+                Width: =30
+                X: =70
+                Y: =183
+                ZIndex: =16
+
+    Modal_Movimentacao_Tela_Consulta As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Semilight
+        Fill: =RGBA(255, 255, 255, 0.73)
+        Height: =1136
+        Visible: |-
+            =If(
+                locIdModalMovimetancao = 1,true
+            )
+        Width: =640
+        ZIndex: =2
+
+        Container3 As groupContainer.manualLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =1088
+            Width: =594
+            X: =23
+            Y: =24
+            ZIndex: =1
+
+            sld_format_moeda_1 As slider:
+                Default: =Len(txt_Valor_Modal_Movimentacao.Text)
+                Height: =65
+                OnChange: =If(IsNumeric(txt_Valor_Modal_Movimentacao.Text) = false,Reset(txt_Valor_Modal_Movimentacao))
+                Visible: =false
+                Width: =225
+                X: =80
+                Y: =40
+                ZIndex: =1
+
+            ico_fechar_modal_movimentacao As icon.Cancel:
+                Color: =RGBA(0, 32, 96, 1)
+                Height: =30
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =Refresh(Bem_Patrimonial); Refresh(Movimentacao_Bem_Patrimonial);
+                    UpdateContext(
+                        {locIdModalMovimetancao: 0}
+                    );
+                Width: =30
+                X: =39
+                Y: =18
+                ZIndex: =2
+
+            Label2_10 As label:
+                Align: =Align.Center
+                Color: =RGBA(0, 32, 96, 1)
+                DisplayMode: =DisplayMode.View
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =49
+                PaddingLeft: =0
+                Size: =21
+                Text: =Concatenate("Patrimônio ",gal_Bem_Patrimoniado_Consulta.Selected.CodigoBarras)
+                Width: =333
+                X: =156
+                Y: =9
+                ZIndex: =11
+
+            btn_Finalizar_Novo_Cadastro_2 As button:
+                DisplayMode: |-
+                    =If(
+                        IsBlank(cmb_Status_Modal_Movimentacao.Selected.Value) ||
+                        IsBlank(dte_Data_Movimen_Modal_Movimentacao.SelectedDate) ||
+                        IsBlank(cmb_Localizacao_Modal_Movimentacao.Selected.Value) ||
+                        IsBlank(cmb_Responsavel_Novo_Modal_Movimentacao.Selected.displayName) ||
+                        IsBlank(txt_Obs_Modal_Movimentacao.Text),
+                        DisplayMode.Disabled,
+                        DisplayMode.Edit
+                    )
+                Fill: =RGBA(0, 32, 96, 1)
+                Height: =60
+                OnSelect: |-
+                    =If( cmb_Status_Modal_Movimentacao.Selected.Value = "Vendido" || cmb_Status_Modal_Movimentacao.Selected.Value = "Doado",
+                    Patch(
+                        Bem_Patrimonial,
+                        {ID: gal_Bem_Patrimoniado_Consulta.Selected.ID},
+                        {
+                           Status: cmb_Status_Modal_Movimentacao.Selected.Value,
+                           Localizacao: cmb_Localizacao_Modal_Movimentacao.Selected.Value,
+                           ID_Responsavel: LookUp(All_Users, cmb_Responsavel_Novo_Modal_Movimentacao.Selected.displayName = displayName,ID),
+                           DataDescarteVenda: Text(DateValue(dte_Data_Movimen_Modal_Movimentacao.SelectedDate,"pt-BR"),DateTimeFormat.UTC),
+                           ValorVenda: txt_Valor_Modal_Movimentacao.Text  
+                        }
+                    ),
+                    Patch(
+                        Bem_Patrimonial,
+                        {ID: gal_Bem_Patrimoniado_Consulta.Selected.ID},
+                        {
+                           Status: cmb_Status_Modal_Movimentacao.Selected.Value,
+                           Localizacao: cmb_Localizacao_Modal_Movimentacao.Selected.Value,
+                           ID_Responsavel: LookUp(All_Users, cmb_Responsavel_Novo_Modal_Movimentacao.Selected.displayName = displayName,ID)
+                        }
+                    )
+                    );
+                    Patch(
+                        Movimentacao_Bem_Patrimonial,
+                        Defaults(Movimentacao_Bem_Patrimonial),
+                        {
+                            DataMovimentacao: Text(DateValue(dte_Data_Movimen_Modal_Movimentacao.SelectedDate,"pt-BR"),DateTimeFormat.UTC),
+                            ValorMovimentacao: txt_Valor_Modal_Movimentacao.Text,
+                            IDBemPatrimonial: gal_Bem_Patrimoniado_Consulta.Selected.ID,
+                            CodigoBarras: gal_Bem_Patrimoniado_Consulta.Selected.CodigoBarras,
+                            IDResponsavelAnterior: gal_Bem_Patrimoniado_Consulta.Selected.ID_Responsavel,
+                            IDResponsavelNovo: LookUp(All_Users, cmb_Responsavel_Novo_Modal_Movimentacao.Selected.displayName = displayName,ID),
+                            Observacao: txt_Obs_Modal_Movimentacao.Text,
+                            Status: cmb_Status_Modal_Movimentacao.Selected.Value
+                        }
+                    );
+                    Refresh(Bem_Patrimonial);Refresh(Movimentacao_Bem_Patrimonial);
+                    Reset(txt_Descricao_Modal_Movimentacao);
+                    Reset(cmb_Status_Modal_Movimentacao);
+                    Reset(dte_Data_Movimen_Modal_Movimentacao);
+                    Reset(cmb_Responsavel_Novo_Modal_Movimentacao);
+                    Reset(txt_Obs_Modal_Movimentacao);
+                    Reset(cmb_Localizacao_Modal_Movimentacao);
+                    Reset(txt_Valor_Modal_Movimentacao);
+                    Set(var_Sucesso,"Movimentação");
+                    UpdateContext(
+                        {lolNavegar: 1,
+                         varFormatadoMoeda: ""
+                        }
+                    );
+                    Navigate('Tela de Sucesso',ScreenTransition.Fade);
+                    UpdateContext(
+                        {locIdModalMovimetancao: 0}
+                    );
+                Size: =18
+                Text: ="Movimentar"
+                Width: =270
+                X: =167
+                Y: =1010
+                ZIndex: =20
+
+            grp_serial_number As group:
+                Height: =5
+                Width: =5
+                X: =1
+                Y: =-26
+                ZIndex: =23
+
+                txt_Serial_Number_Modal_Movimentacao As text:
+                    BorderColor: =RGBA(0, 32, 96, 1)
+                    BorderStyle: =BorderStyle.None
+                    Color: =RGBA(0, 32, 96, 1)
+                    Default: =gal_Bem_Patrimoniado_Consulta.Selected.SerialNumber
+                    DisabledBorderColor: =RGBA(0, 32, 96, 1)
+                    DisabledColor: =RGBA(0, 32, 96, 1)
+                    DisabledFill: =RGBA(255, 255, 255, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =45
+                    HintText: =""
+                    PaddingLeft: =0
+                    Size: =16
+                    Width: =396
+                    X: =197
+                    Y: =113
+                    ZIndex: =21
+
+                Label2_19 As label:
+                    Color: =RGBA(0, 32, 96, 1)
+                    DisplayMode: =DisplayMode.View
+                    Font: =Font.'Segoe UI'
+                    Height: =45
+                    PaddingLeft: =0
+                    Size: =16
+                    Text: |-
+                        ="Serial Number: "
+                    Width: =157
+                    X: =40
+                    Y: =113
+                    ZIndex: =22
+
+            "gal_Movimentacao As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+                DelayItemLoading: =true
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =188
+                Items: |-
+                    =Filter(
+                        Movimentacao_Bem_Patrimonial,
+                        gal_Bem_Patrimoniado_Consulta.Selected.ID = IDBemPatrimonial
+                    )
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                ShowScrollbar: =false
+                TemplatePadding: =0
+                TemplateSize: =188
+                Width: =529
+                X: =35
+                Y: =798
+                ZIndex: =25
+
+                Button1_2 As button:
+                    BorderColor: =RGBA(0, 32, 96, 1)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =168
+                    HoverBorderColor: =
+                    HoverFill: =
+                    OnSelect: =Select(Parent)
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Size: =24
+                    Text: =""
+                    Width: =524
+                    Y: =9
+                    ZIndex: =1
+
+                Rectangle5_2 As rectangle:
+                    BorderColor: =RGBA(0, 32, 96, 1)
+                    Fill: =RGBA(0, 32, 96, 1)
+                    Height: =168
+                    OnSelect: =Select(Parent)
+                    Width: =10
+                    Y: =9
+                    ZIndex: =2
+
+                lbl_Responsavel_Anterior_Tela_Movimentacao_1 As label:
+                    Font: =Font.'Segoe UI'
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =14
+                    Text: |-
+                        =Concatenate("Responsável Anterior: ",LookUp(All_Users,ThisItem.IDResponsavelAnterior = ID,displayName))
+                    Width: =510
+                    X: =10
+                    Y: =89
+                    ZIndex: =3
+
+                lbl_Responsavel_Novo_Tela_Movimentacao_1 As label:
+                    Font: =Font.'Segoe UI'
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =14
+                    Text: |-
+                        =Concatenate("Último Responsável: ",LookUp(All_Users,ThisItem.IDResponsavelNovo = ID,displayName))
+                    Width: =510
+                    X: =10
+                    Y: =129
+                    ZIndex: =4
+
+                lbl_Data_Tela_Movimentacao_1 As label:
+                    Color: =RGBA(0, 32, 96, 1)
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =16
+                    Text: =Date(Mid(ThisItem.DataMovimentacao,7,4),Mid(ThisItem.DataMovimentacao,1,2),Mid(ThisItem.DataMovimentacao,4,2))
+                    Width: =134
+                    Wrap: =false
+                    X: =10
+                    Y: =9
+                    ZIndex: =5
+
+                lbl_Status_Tela_Movimentacao_1 As label:
+                    Font: =Font.'Segoe UI'
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =14
+                    Text: |-
+                        =Concatenate("Status: ",ThisItem.Status)
+                    Width: =252
+                    X: =10
+                    Y: =49
+                    ZIndex: =6
+
+            grp_data_movimentacao As group:
+                Height: =5
+                Width: =5
+                X: =80
+                Y: =80
+                ZIndex: =26
+
+                arrendodar_data_movimentacao As groupContainer.manualLayoutContainer:
+                    BorderColor: =RGBA(0, 32, 96, 1)
+                    BorderThickness: =2
+                    DropShadow: =DropShadow.None
+                    Height: =60
+                    Width: =254
+                    X: =39
+                    Y: =508
+                    ZIndex: =10
+
+                    dte_Data_Movimen_Modal_Movimentacao As datepicker:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DateTimeZone: =DateTimeZone.UTC
+                        DefaultDate: =
+                        Font: =Font.'Segoe UI'
+                        Height: =60
+                        IconBackground: =
+                        IconFill: =RGBA(0, 32, 96, 1)
+                        Language: ="pt-BR"
+                        Size: =16
+                        Width: =254
+                        ZIndex: =1
+
+                Label2_16 As label:
+                    Color: =RGBA(0, 32, 96, 1)
+                    DisplayMode: =DisplayMode.View
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =30
+                    PaddingLeft: =0
+                    Size: =16
+                    Text: ="Data de movimentação"
+                    Width: =254
+                    X: =39
+                    Y: =478
+                    ZIndex: =17
+
+            grp_localizacao As group:
+                Height: =5
+                Width: =5
+                X: =80
+                Y: =80
+                ZIndex: =26
+
+                arrendodar_localizacao As groupContainer.manualLayoutContainer:
+                    BorderColor: =RGBA(0, 32, 96, 1)
+                    BorderThickness: =2
+                    DropShadow: =DropShadow.None
+                    Height: =60
+                    Width: =524
+                    X: =40
+                    Y: =401
+                    ZIndex: =8
+
+                    cmb_Localizacao_Modal_Movimentacao As combobox:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        ChevronBackground: =RGBA(0, 0, 0, 0)
+                        ChevronFill: =RGBA(0, 32, 96, 1)
+                        ChevronHoverBackground: =
+                        DisplayFields: =["Value"]
+                        Font: =Font.'Segoe UI'
+                        Height: =60
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        InputTextPlaceholder: =""
+                        Items: =["Sala 1", "Sala 2"]
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        SearchFields: =["Value"]
+                        SearchItems: =Search(["Sala 1", "Sala 2"],cmb_Localizacao_Modal_Movimentacao.SearchText,"Value")
+                        SelectionFill: =RGBA(0, 32, 96, 1)
+                        SelectMultiple: =false
+                        Size: =16
+                        Width: =524
+                        ZIndex: =1
+
+                    txt_Localizacao_Modal_Movimentacao As text:
+                        BorderColor: =RGBA(0, 32, 96, 1)
+                        BorderStyle: =BorderStyle.None
+                        Default: =gal_Bem_Patrimoniado_Consulta.Selected.Localizacao
+                        DisabledBorderColor: =RGBA(0, 32, 96, 1)
+                        DisabledColor: =RGBA(0, 0, 0, 1)
+                        DisabledFill: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =DisplayMode.Disabled
+                        Font: =Font.'Segoe UI'
+                        Height: =60
+                        HintText: =""
+                        Size: =16
+                        Visible: |-
+                            =If(
+                                IsBlank(cmb_Localizacao_Modal_Movimentacao.Selected.Value),
+                                true,
+                                false
+                            )
+                        Width: =470
+                        ZIndex: =2
+
+                Label2_15 As label:
+                    Color: =RGBA(0, 32, 96, 1)
+                    DisplayMode: =DisplayMode.View
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =30
+                    PaddingLeft: =0
+                    Size: =16
+                    Text: ="Localização"
+                    Width: =327
+                    X: =40
+                    Y: =372
+                    ZIndex: =16
+
+            grp_status As group:
+                Height: =5
+                Width: =5
+                X: =80
+                Y: =80
+                ZIndex: =26
+
+                arrendodar_status As groupContainer.manualLayoutContainer:
+                    BorderColor: =RGBA(0, 32, 96, 1)
+                    BorderThickness: =2
+                    DropShadow: =DropShadow.None
+                    Height: =60
+                    Width: =524
+                    X: =40
+                    Y: =188
+                    ZIndex: =7
+
+                    cmb_Status_Modal_Movimentacao As combobox:
+                        BorderColor: =RGBA(218, 227, 243, 1)
+                        BorderStyle: =BorderStyle.None
+                        ChevronBackground: =RGBA(0, 0, 0, 0)
+                        ChevronFill: =RGBA(0, 32, 96, 1)
+                        ChevronHoverBackground: =
+                        DisplayFields: =["Value"]
+                        Font: =Font.'Segoe UI'
+                        Height: =60
+                        HoverBorderColor: =
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        InputTextPlaceholder: =""
+                        Items: =["Manutenção", "Em uso", "Em estoque", "Descartado", "Vendido", "Doado"]
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        SearchFields: =["Value"]
+                        SearchItems: =Search(["Manutenção", "Em uso", "Em estoque", "Descartado", "Vendido", "Doado"],cmb_Status_Modal_Movimentacao.SearchText,"Value")
+                        SelectionFill: =RGBA(0, 32, 96, 1)
+                        SelectMultiple: =false
+                        Size: =16
+                        Width: =524
+                        ZIndex: =1
+
+                    txt_Status_Modal_Movimentacao As text:
+                        BorderColor: =RGBA(0, 32, 96, 1)
+                        BorderStyle: =BorderStyle.None
+                        Default: =gal_Bem_Patrimoniado_Consulta.Selected.Status
+                        DisabledBorderColor: =RGBA(0, 32, 96, 1)
+                        DisabledColor: =RGBA(0, 0, 0, 1)
+                        DisabledFill: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =DisplayMode.Disabled
+                        Font: =Font.'Segoe UI'
+                        Height: =60
+                        HintText: =""
+                        Size: =16
+                        Visible: |-
+                            =If(
+                                IsBlank(cmb_Status_Modal_Movimentacao.Selected.Value),
+                                true,
+                                false
+                            )
+                        Width: =470
+                        ZIndex: =2
+
+                Label2_14 As label:
+                    Color: =RGBA(0, 32, 96, 1)
+                    DisplayMode: =DisplayMode.View
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =30
+                    PaddingLeft: =0
+                    Size: =16
+                    Text: ="Status"
+                    Width: =327
+                    X: =40
+                    Y: =158
+                    ZIndex: =15
+
+            grp_novo_responsavel As group:
+                Height: =5
+                Width: =5
+                X: =80
+                Y: =80
+                ZIndex: =26
+
+                arrendodar_novo_responsavel As groupContainer.manualLayoutContainer:
+                    BorderColor: =RGBA(0, 32, 96, 1)
+                    BorderThickness: =2
+                    DropShadow: =DropShadow.None
+                    Height: =60
+                    Width: =524
+                    X: =39
+                    Y: =295
+                    ZIndex: =9
+
+                    cmb_Responsavel_Novo_Modal_Movimentacao As combobox:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        ChevronBackground: =RGBA(0, 0, 0, 0)
+                        ChevronFill: =RGBA(0, 32, 96, 1)
+                        ChevronHoverBackground: =
+                        DisplayFields: =["field_1"]
+                        Font: =Font.'Segoe UI'
+                        Height: =60
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        InputTextPlaceholder: =""
+                        Items: =All_Users.displayName
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        SearchFields: =["field_1"]
+                        SearchItems: =Search(All_Users.displayName,cmb_Responsavel_Novo_Modal_Movimentacao.SearchText,"field_1")
+                        SelectionFill: =RGBA(0, 32, 96, 1)
+                        SelectMultiple: =false
+                        Size: =16
+                        Width: =524
+                        ZIndex: =1
+
+                    txt_Responsavel_Anterior_Modal_Movimentacao_1 As text:
+                        BorderColor: =RGBA(0, 32, 96, 1)
+                        BorderStyle: =BorderStyle.None
+                        Default: =LookUp(All_Users,gal_Bem_Patrimoniado_Consulta.Selected.ID_Responsavel = ID,displayName)
+                        DisabledBorderColor: =RGBA(0, 32, 96, 1)
+                        DisabledColor: =RGBA(0, 0, 0, 1)
+                        DisabledFill: =RGBA(255, 255, 255, 1)
+                        DisplayMode: =DisplayMode.Disabled
+                        Font: =Font.'Segoe UI'
+                        Height: =60
+                        HintText: =""
+                        Size: =16
+                        Visible: |-
+                            =If(
+                                IsBlank(cmb_Responsavel_Novo_Modal_Movimentacao.Selected.displayName),
+                                true,
+                                false
+                            )
+                        Width: =470
+                        ZIndex: =2
+
+                Label2_13 As label:
+                    Color: =RGBA(0, 32, 96, 1)
+                    DisplayMode: =DisplayMode.View
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =30
+                    PaddingLeft: =0
+                    Size: =16
+                    Text: ="Responsável"
+                    Width: =327
+                    X: =39
+                    Y: =265
+                    ZIndex: =14
+
+            grp_nome_ativo As group:
+                Height: =5
+                Width: =5
+                X: =80
+                Y: =80
+                ZIndex: =26
+
+                txt_Descricao_Modal_Movimentacao As text:
+                    BorderColor: =RGBA(0, 32, 96, 1)
+                    BorderStyle: =BorderStyle.None
+                    Color: =RGBA(0, 32, 96, 1)
+                    Default: =gal_Bem_Patrimoniado_Consulta.Selected.Descricao
+                    DisabledBorderColor: =RGBA(0, 32, 96, 1)
+                    DisabledColor: =RGBA(0, 32, 96, 1)
+                    DisabledFill: =RGBA(255, 255, 255, 1)
+                    DisplayMode: =DisplayMode.Disabled
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =45
+                    HintText: =""
+                    PaddingLeft: =0
+                    Size: =16
+                    Width: =396
+                    X: =197
+                    Y: =68
+                    ZIndex: =3
+
+                Label2_11 As label:
+                    Color: =RGBA(0, 32, 96, 1)
+                    DisplayMode: =DisplayMode.View
+                    Font: =Font.'Segoe UI'
+                    Height: =45
+                    PaddingLeft: =0
+                    Size: =16
+                    Text: |-
+                        ="Nome do ativo: "
+                    Width: =157
+                    X: =40
+                    Y: =68
+                    ZIndex: =12
+
+            grp_valor_movimentacao As group:
+                Height: =5
+                Width: =5
+                X: =80
+                Y: =80
+                ZIndex: =26
+
+                txt_Valor_Modal_Movimentacao As text:
+                    BorderColor: =RGBA(0, 32, 96, 1)
+                    Default: =varFormatadoMoeda1
+                    Font: =Font.'Segoe UI'
+                    Height: =60
+                    HintText: ="1000,55"
+                    OnChange: |-
+                        =UpdateContext(
+                            {   //O valor formatado
+                                varFormatadoMoeda1: Text(
+                                    Substitute(Self.Text,".",",")
+                                ),
+                                //O valor sem formatação
+                                varSemFormato1:  Substitute(Self.Text,".",",")
+                            }
+                        );
+                        Reset(Self)
+                    Size: =16
+                    Tooltip: ="1000,55"
+                    Width: =254
+                    X: =308
+                    Y: =508
+                    ZIndex: =6
+
+                Label2_17 As label:
+                    Color: =RGBA(0, 32, 96, 1)
+                    DisplayMode: =DisplayMode.View
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =30
+                    PaddingLeft: =0
+                    Size: =16
+                    Text: ="Valor de movimentação"
+                    Width: =254
+                    X: =309
+                    Y: =478
+                    ZIndex: =18
+
+            grp_observacao As group:
+                Height: =5
+                Width: =5
+                X: =80
+                Y: =80
+                ZIndex: =26
+
+                txt_Obs_Modal_Movimentacao As text:
+                    BorderColor: =RGBA(0, 32, 96, 1)
+                    Default: =
+                    Font: =Font.'Segoe UI'
+                    Height: =120
+                    HintText: =""
+                    Mode: =TextMode.MultiLine
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
+                    Size: =16
+                    Tooltip: ="1000,55"
+                    Width: =524
+                    X: =40
+                    Y: =615
+                    ZIndex: =5
+
+                Label2_18 As label:
+                    Color: =RGBA(0, 32, 96, 1)
+                    DisplayMode: =DisplayMode.View
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =30
+                    PaddingLeft: =0
+                    Size: =16
+                    Text: ="Observação"
+                    Width: =254
+                    X: =40
+                    Y: =585
+                    ZIndex: =19
+
+            Group1 As group:
+                Height: =5
+                Width: =5
+                X: =60
+                Y: =60
+                ZIndex: =26
+
+                Label2_12 As label:
+                    Align: =Align.Center
+                    Color: =RGBA(0, 32, 96, 1)
+                    DisplayMode: =DisplayMode.View
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    PaddingLeft: =0
+                    Size: =16
+                    Text: ="Histórico de Movimentações"
+                    Width: =291
+                    X: =167
+                    Y: =758
+                    ZIndex: =23
+
+                Icon4_1 As icon.History:
+                    Color: =RGBA(0, 32, 96, 1)
+                    DisplayMode: =DisplayMode.View
+                    Height: =30
+                    Icon: =Icon.History
+                    Width: =30
+                    X: =137
+                    Y: =763
+                    ZIndex: =24
+

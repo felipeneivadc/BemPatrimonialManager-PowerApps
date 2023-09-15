@@ -1,0 +1,711 @@
+"'Tela de Cadastro' As screen":
+    Fill: =RGBA(242, 242, 242, 1)
+
+    Container_Parte2 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =1135
+        Visible: |-
+            =If(
+                lolNavegar = 2,
+                true
+            )
+        Width: =640
+        Y: =1
+        ZIndex: =1
+
+        btn_Finalizar_Novo_Cadastro As button:
+            DisplayMode: |-
+                =If(
+                    IsBlank(cmb_Descricao_Novo_Cadastro.Selected.Value) ||
+                    IsBlank(cmb_Status_Novo_Cadastro.Selected.Value) ||
+                    IsBlank(cmb_Localizacao_Novo_Cadastro.Selected.Value) ||
+                    IsBlank(txt_Num_Patrimonio_Novo_Cadastro.Text) ||
+                    IsBlank(img_Bem_patrimoniado.Image),
+                    DisplayMode.Disabled,
+                    DisplayMode.Edit
+                )
+            Fill: =RGBA(0, 32, 96, 1)
+            Height: =60
+            OnSelect: |-
+                =Patch(
+                    Bem_Patrimonial,
+                    Defaults(Bem_Patrimonial),
+                    {
+                       Descricao: cmb_Descricao_Novo_Cadastro.Selected.Value,
+                       Status: cmb_Status_Novo_Cadastro.Selected.Value,
+                       DataAquisicao: Text(DateValue(dte_Data_Aquisicao_Novo_Cadastro.SelectedDate,"pt-BR"),DateTimeFormat.UTC),
+                       ValorAquisicao: txt_Valor_Aquisicao_Novo_Cadastro.Text,
+                       CodigoBarras: txt_Num_Patrimonio_Novo_Cadastro.Text,
+                       SerialNumber: txt_Serial_Number_Novo_Cadastro.Text,
+                       Localizacao: cmb_Localizacao_Novo_Cadastro.Selected.Value,
+                       ID_Responsavel: LookUp(All_Users, cmb_Responsavel_Novo_Cadastro.Selected.displayName = displayName,ID),
+                       Imagem_Bem_Patrimoniado: img_Bem_patrimoniado.Image  
+                    }
+                );
+                Refresh(Bem_Patrimonial);Refresh(Movimentacao_Bem_Patrimonial);
+                Reset(cmb_Descricao_Novo_Cadastro);
+                Reset(cmb_Status_Novo_Cadastro);
+                Reset(dte_Data_Aquisicao_Novo_Cadastro);
+                Reset(txt_Valor_Aquisicao_Novo_Cadastro);
+                Reset(txt_Num_Patrimonio_Novo_Cadastro);
+                Reset(txt_Serial_Number_Novo_Cadastro);
+                Reset(cmb_Localizacao_Novo_Cadastro);
+                Reset(cmb_Responsavel_Novo_Cadastro);
+                Reset(AddMediaButton3);
+                ClearCollect(col_Num_Serie, {});
+                ClearCollect(col_Num_Patrimonio, {});
+                Set(var_Sucesso,"Cadastro");
+                UpdateContext(
+                    {lolNavegar: 1,
+                     varFormatadoMoeda: ""
+                    }
+                );
+                Navigate('Tela de Sucesso',ScreenTransition.Fade)
+            Size: =18
+            Text: ="Finalizar"
+            Width: =270
+            X: =328
+            Y: =1033
+            ZIndex: =2
+
+        btn_Voltar_Novo_Cadastro As button:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 32, 96, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            HoverColor: =RGBA(0, 32, 96, 1)
+            HoverFill: =
+            OnSelect: |-
+                =UpdateContext(
+                    {
+                        lolNavegar: 1
+                    }
+                )
+            PressedFill: =
+            Size: =18
+            Text: ="Voltar"
+            Width: =270
+            X: =42
+            Y: =1033
+            ZIndex: =3
+
+        Label2_7 As label:
+            Align: =Align.Center
+            Color: =RGBA(0, 32, 96, 1)
+            DisplayMode: =DisplayMode.View
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =42
+            PaddingLeft: =0
+            Size: =21
+            Text: ="Informações Específicas"
+            Width: =350
+            X: =154
+            Y: =49
+            ZIndex: =11
+
+        Image5 As image:
+            Height: =16
+            Image: =bolinha2
+            Width: =120
+            X: =208
+            Y: =97
+            ZIndex: =14
+
+        grp_num_patrimonio_parte2 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =15
+
+            txt_Num_Patrimonio_Novo_Cadastro As text:
+                BorderColor: =RGBA(0, 32, 96, 1)
+                Default: =Concat(col_Num_Patrimonio,Value,";")
+                Font: =Font.'Segoe UI'
+                Format: =TextFormat.Number
+                Height: =60
+                HintText: =""
+                HoverBorderColor: =RGBA(9, 33, 98, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                Size: =14
+                Width: =524
+                X: =58
+                Y: =510
+                ZIndex: =4
+
+            Container_Codigo_Barras As groupContainer.manualLayoutContainer:
+                BorderStyle: =BorderStyle.None
+                DropShadow: =DropShadow.None
+                Height: =40
+                Width: =40
+                X: =531
+                Y: =520
+                ZIndex: =5
+
+                img_codigo_barras As image:
+                    Height: =40
+                    Image: =codigo_barras
+                    Width: =40
+                    ZIndex: =1
+
+                "bar_Num_Patrimonio_Novo_Cadastro As 'Leitor de Código de Barras'":
+                    BorderFillColor: =RGBA(47, 81, 151, 1)
+                    BorderStyle: =BorderStyle.None
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledContentColor: =RGBA(0, 0, 0, 0)
+                    DisabledFillColor: =RGBA(0, 0, 0, 0)
+                    DisplayMode: =DisplayMode.Edit
+                    FillColor: =RGBA(0, 0, 0, 0)
+                    FontSize: =0
+                    Height: =40
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverContentColor: =RGBA(0, 0, 0, 0)
+                    HoverFillColor: =RGBA(0, 0, 0, 0)
+                    OnChange: |-
+                        =ClearCollect(
+                            col_Num_Patrimonio,
+                            bar_Num_Patrimonio_Novo_Cadastro.Barcodes
+                        )
+                    OnScan: =false
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedContentColor: =RGBA(0, 0, 0, 0)
+                    PressedFillColor: =RGBA(0, 0, 0, 0)
+                    Text: =""
+                    TextColor: =RGBA(255, 255, 255, 1)
+                    Width: =40
+                    X: =0
+                    Y: =0
+                    ZIndex: =2
+
+            Label2_9 As label:
+                Color: =RGBA(0, 32, 96, 1)
+                DisplayMode: =DisplayMode.View
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                PaddingLeft: =0
+                Size: =16
+                Text: ="Número do patrimônio"
+                Width: =327
+                X: =58
+                Y: =480
+                ZIndex: =13
+
+        grp_serial_number_parte2 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =15
+
+            txt_Serial_Number_Novo_Cadastro As text:
+                BorderColor: =RGBA(0, 32, 96, 1)
+                Default: =Concat(col_Num_Serie,Value,";")
+                Font: =Font.'Segoe UI'
+                Height: =60
+                HintText: =""
+                HoverFill: =RGBA(255, 255, 255, 1)
+                Size: =14
+                Width: =524
+                X: =58
+                Y: =345
+                ZIndex: =6
+
+            Container_Numero_Serie As groupContainer.manualLayoutContainer:
+                BorderStyle: =BorderStyle.None
+                DropShadow: =DropShadow.None
+                Height: =40
+                Width: =40
+                X: =531
+                Y: =355
+                ZIndex: =9
+
+                img_codigo_barras_1 As image:
+                    Height: =40
+                    Image: =codigo_barras
+                    Width: =40
+                    ZIndex: =1
+
+                "bar_Num_Serie_Novo_Cadastro As 'Leitor de Código de Barras'":
+                    BorderFillColor: =RGBA(47, 81, 151, 1)
+                    BorderStyle: =BorderStyle.None
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledContentColor: =RGBA(0, 0, 0, 0)
+                    DisabledFillColor: =RGBA(0, 0, 0, 0)
+                    DisplayMode: =DisplayMode.Edit
+                    FillColor: =RGBA(0, 0, 0, 0)
+                    FontSize: =0
+                    Height: =40
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverContentColor: =RGBA(0, 0, 0, 0)
+                    HoverFillColor: =RGBA(0, 0, 0, 0)
+                    OnChange: |-
+                        =ClearCollect(
+                            col_Num_Serie,
+                            bar_Num_Serie_Novo_Cadastro.Barcodes
+                        )
+                    OnScan: =ResetBarcodeReader = true
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedContentColor: =RGBA(0, 0, 0, 0)
+                    PressedFillColor: =RGBA(0, 0, 0, 0)
+                    Text: =""
+                    TextColor: =RGBA(255, 255, 255, 1)
+                    Width: =40
+                    X: =0
+                    Y: =0
+                    ZIndex: =2
+
+            Label2_8 As label:
+                Color: =RGBA(0, 32, 96, 1)
+                DisplayMode: =DisplayMode.View
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                PaddingLeft: =0
+                Size: =16
+                Text: ="Número de série (eletrônicos)"
+                Width: =327
+                X: =58
+                Y: =315
+                ZIndex: =12
+
+        grp_adicionar_foto_parte2 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =15
+
+            img_Bem_patrimoniado As image:
+                Height: =50
+                Image: =If(IsBlank(AddMediaButton3.Media), SampleImage, AddMediaButton3.Media)
+                Width: =50
+                X: =63
+                Y: =195
+                ZIndex: =7
+
+            Image3 As image:
+                Height: =60
+                Image: =image_camera
+                Visible: =If(IsBlank(AddMediaButton3.Media),true,false)
+                Width: =60
+                X: =58
+                Y: =190
+                ZIndex: =8
+
+            AddMediaButton3 As addMedia:
+                BorderStyle: =BorderStyle.None
+                ChangePictureText: ="Alterar foto do ativo"
+                Color: =RGBA(0, 32, 96, 1)
+                Height: =100
+                Size: =16
+                Text: ="Adicionar foto do ativo"
+                Width: =366
+                X: =63
+                Y: =170
+                ZIndex: =10
+
+    Container_Parte1 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =1135
+        Visible: |-
+            =If(
+                lolNavegar = 2,
+                false, true
+            )
+        Width: =640
+        ZIndex: =2
+
+        sld_format_moeda As slider:
+            Default: =Len(txt_Valor_Aquisicao_Novo_Cadastro.Text)
+            Height: =65
+            OnChange: =If(IsNumeric(txt_Valor_Aquisicao_Novo_Cadastro.Text) = false,Reset(txt_Valor_Aquisicao_Novo_Cadastro))
+            Visible: =false
+            Width: =225
+            X: =192
+            Y: =1070
+            ZIndex: =1
+
+        ico_voltar As icon.ChevronLeft:
+            Color: =RGBA(0, 0, 0, 1)
+            Height: =30
+            Icon: =Icon.ChevronLeft
+            OnSelect: |-
+                =Refresh(Bem_Patrimonial);Refresh(Movimentacao_Bem_Patrimonial);
+                Navigate('Tela de Consulta',ScreenTransition.Cover)
+            Width: =30
+            X: =58
+            Y: =57
+            ZIndex: =5
+
+        btn_Limpar_Novo_Cadastro As button:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 32, 96, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            HoverColor: =RGBA(0, 32, 96, 1)
+            HoverFill: =
+            OnSelect: |-
+                =Refresh(Bem_Patrimonial);Refresh(Movimentacao_Bem_Patrimonial);
+                UpdateContext({varFormatadoMoeda: ""});
+                Reset(cmb_Descricao_Novo_Cadastro);
+                Reset(cmb_Status_Novo_Cadastro);
+                Reset(dte_Data_Aquisicao_Novo_Cadastro);
+                Reset(txt_Valor_Aquisicao_Novo_Cadastro);
+                Reset(cmb_Localizacao_Novo_Cadastro);
+                Reset(cmb_Responsavel_Novo_Cadastro);
+            PressedColor: =
+            PressedFill: =
+            Size: =18
+            Text: ="Limpar"
+            Width: =270
+            X: =42
+            Y: =1033
+            ZIndex: =6
+
+        btn_Continuar_Novo_Cadastro As button:
+            DisplayMode: |-
+                =If(
+                    IsBlank(cmb_Descricao_Novo_Cadastro.Selected.Value) ||
+                    IsBlank(cmb_Status_Novo_Cadastro.Selected.Value) ||
+                    IsBlank(cmb_Localizacao_Novo_Cadastro.Selected.Value),
+                    DisplayMode.Disabled,
+                    DisplayMode.Edit
+                )
+            Fill: =RGBA(0, 32, 96, 1)
+            Height: =60
+            OnSelect: |-
+                =UpdateContext(
+                    {
+                        lolNavegar: 2
+                    }
+                )
+            Size: =18
+            Text: ="Continuar"
+            Width: =270
+            X: =328
+            Y: =1033
+            ZIndex: =7
+
+        Label2_2 As label:
+            Align: =Align.Center
+            Color: =RGBA(0, 32, 96, 1)
+            DisplayMode: =DisplayMode.View
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =44
+            PaddingLeft: =0
+            Size: =21
+            Text: ="Informações Gerais"
+            Width: =350
+            X: =145
+            Y: =49
+            ZIndex: =15
+
+        Image4 As image:
+            DisplayMode: =DisplayMode.View
+            Height: =16
+            Image: =bolinha1
+            Width: =120
+            X: =297
+            Y: =97
+            ZIndex: =20
+
+        grp_nome_ativo_parte1 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =21
+
+            borda_arrendodada_nome_ativo As groupContainer.manualLayoutContainer:
+                BorderColor: =RGBA(0, 32, 96, 1)
+                BorderThickness: =2
+                DropShadow: =DropShadow.None
+                Height: =60
+                Width: =524
+                X: =58
+                Y: =178
+                ZIndex: =9
+
+                cmb_Descricao_Novo_Cadastro As combobox:
+                    BorderColor: =RGBA(0, 32, 96, 1)
+                    BorderStyle: =BorderStyle.None
+                    ChevronBackground: =RGBA(0, 0, 0, 0)
+                    ChevronFill: =RGBA(0, 32, 96, 1)
+                    ChevronHoverBackground: =
+                    DisplayFields: =["Value"]
+                    Font: =Font.'Segoe UI'
+                    Height: =60
+                    HoverBorderColor: =
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    InputTextPlaceholder: =""
+                    Items: =["Tela", "Armário","Notebook"]
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    SearchFields: =["Value"]
+                    SearchItems: =Search(["Tela", "Armário","Notebook"],cmb_Descricao_Novo_Cadastro.SearchText,"Value")
+                    SelectMultiple: =false
+                    Size: =16
+                    Width: =524
+                    ZIndex: =1
+
+            Label2_6 As label:
+                Color: =RGBA(0, 32, 96, 1)
+                DisplayMode: =DisplayMode.View
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                PaddingLeft: =0
+                Size: =16
+                Text: ="Nome do ativo"
+                Width: =254
+                X: =58
+                Y: =148
+                ZIndex: =19
+
+        grp_status_parte1 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =21
+
+            borda_arrendodada_status As groupContainer.manualLayoutContainer:
+                BorderColor: =RGBA(0, 32, 96, 1)
+                BorderThickness: =2
+                DropShadow: =DropShadow.None
+                Height: =60
+                Width: =524
+                X: =58
+                Y: =340
+                ZIndex: =8
+
+                cmb_Status_Novo_Cadastro As combobox:
+                    BorderColor: =RGBA(0, 32, 96, 1)
+                    BorderStyle: =BorderStyle.None
+                    ChevronBackground: =RGBA(0, 0, 0, 0)
+                    ChevronFill: =RGBA(0, 32, 96, 1)
+                    ChevronHoverBackground: =
+                    DisplayFields: =["Value"]
+                    Font: =Font.'Segoe UI'
+                    Height: =60
+                    HoverBorderColor: =
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    InputTextPlaceholder: =""
+                    Items: =["Manutenção", "Em uso", "Em estoque", "Descartado", "Vendido", "Doado"]
+                    SearchFields: =["Value"]
+                    SearchItems: =Search(["Manutenção", "Em uso", "Em estoque", "Descartado", "Vendido", "Doado"],cmb_Status_Novo_Cadastro.SearchText,"Value")
+                    SelectionFill: =RGBA(0, 0, 0, 0)
+                    SelectMultiple: =false
+                    Size: =16
+                    Width: =524
+                    ZIndex: =1
+
+            Label2_5 As label:
+                Color: =RGBA(0, 32, 96, 1)
+                DisplayMode: =DisplayMode.View
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                PaddingLeft: =0
+                Size: =16
+                Text: ="Status"
+                Width: =254
+                X: =58
+                Y: =310
+                ZIndex: =18
+
+        grp_localizacao_parte1 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =21
+
+            borda_arrendodada_localizacao As groupContainer.manualLayoutContainer:
+                BorderColor: =RGBA(0, 32, 96, 1)
+                BorderThickness: =2
+                DropShadow: =DropShadow.None
+                Height: =60
+                Width: =524
+                X: =58
+                Y: =508
+                ZIndex: =10
+
+                cmb_Localizacao_Novo_Cadastro As combobox:
+                    BorderColor: =RGBA(0, 32, 96, 1)
+                    BorderStyle: =BorderStyle.None
+                    ChevronBackground: =RGBA(0, 0, 0, 0)
+                    ChevronFill: =RGBA(0, 32, 96, 1)
+                    ChevronHoverBackground: =
+                    DisplayFields: =["Value"]
+                    Font: =Font.'Segoe UI'
+                    Height: =60
+                    HoverBorderColor: =
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    InputTextPlaceholder: =""
+                    Items: =["Vitória - 5º andar - Auditório","Vitória - 5º andar - Copa","Vitória - 5º andar - CPD","Vitória - 5º andar - Lounge 1","Vitória - 5º andar - Lounge 2","Vitória - 5º andar - Sala 2","Vitória - 5º andar - Sala 3","Vitória - 5º andar - Sala 4","Vitória - 5º andar - Sala 5","Vitória - 5º andar - Sala 6", "Vitória - 5º andar - Sala 7","Vitória - 5º andar - Sala de vivência","Vitória - 6º andar - Assessoria","Vitória - 6º andar - Copa","Vitória - 6º andar - Corporate","Vitória - 6º andar - CPD","Vitória - 6º andar - Gestora", "Vitória - 6º andar - MFO","Vitória - 6º andar - Portfolio Solutions", "Vitória - 6º andar - Sala de tecnologia","Vitória - 6º andar - Serviços financeiros","Vitória - 6º andar - Wealth","Vitória - 7º andar - Backoffice","Vitória - 7º andar - Cabine Telefônica","Vitória - 7º andar - Copa","Vitória - 7º andar - CPD","Vitória - 7º andar - Diretoria","Vitória - 7º andar - IB","Vitória - 7º andar - Mercados privados","Vitória - 7º andar - Middle office","Vitória - 7º andar - Real Estate","Vitória - 10º andar - Cabine Telefônica","Vitória - 10º andar - Copa","Vitória - 10º andar - CPD","Vitória - 10º andar - Folha Business","Vitória - 10º andar - Futura","Vitória - 10º andar - Marketing","Vitória - 10º andar - Produtora"]
+                    SearchFields: =["Value"]
+                    SearchItems: =Search(["Vitória - 5º andar - Auditório","Vitória - 5º andar - Copa","Vitória - 5º andar - CPD","Vitória - 5º andar - Lounge 1","Vitória - 5º andar - Lounge 2","Vitória - 5º andar - Sala 2","Vitória - 5º andar - Sala 3","Vitória - 5º andar - Sala 4","Vitória - 5º andar - Sala 5","Vitória - 5º andar - Sala 6", "Vitória - 5º andar - Sala 7","Vitória - 5º andar - Sala de vivência","Vitória - 6º andar - Assessoria","Vitória - 6º andar - Copa","Vitória - 6º andar - Corporate","Vitória - 6º andar - CPD","Vitória - 6º andar - Gestora", "Vitória - 6º andar - MFO","Vitória - 6º andar - Portfolio Solutions", "Vitória - 6º andar - Sala de tecnologia","Vitória - 6º andar - Serviços financeiros","Vitória - 6º andar - Wealth","Vitória - 7º andar - Backoffice","Vitória - 7º andar - Cabine Telefônica","Vitória - 7º andar - Copa","Vitória - 7º andar - CPD","Vitória - 7º andar - Diretoria","Vitória - 7º andar - IB","Vitória - 7º andar - Mercados privados","Vitória - 7º andar - Middle office","Vitória - 7º andar - Real Estate","Vitória - 10º andar - Cabine Telefônica","Vitória - 10º andar - Copa","Vitória - 10º andar - CPD","Vitória - 10º andar - Folha Business","Vitória - 10º andar - Futura","Vitória - 10º andar - Marketing","Vitória - 10º andar - Produtora"],cmb_Localizacao_Novo_Cadastro.SearchText,"Value")
+                    SelectMultiple: =false
+                    Size: =16
+                    Width: =524
+                    ZIndex: =1
+
+            Label2_4 As label:
+                Color: =RGBA(0, 32, 96, 1)
+                DisplayMode: =DisplayMode.View
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                PaddingLeft: =0
+                Size: =16
+                Text: ="Localização"
+                Width: =254
+                X: =58
+                Y: =478
+                ZIndex: =17
+
+        grp_responsavel_parte1 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =21
+
+            borda_arrendodada_responsavel As groupContainer.manualLayoutContainer:
+                BorderColor: =RGBA(0, 32, 96, 1)
+                BorderThickness: =2
+                DropShadow: =DropShadow.None
+                Height: =60
+                Width: =524
+                X: =58
+                Y: =673
+                ZIndex: =11
+
+                cmb_Responsavel_Novo_Cadastro As combobox:
+                    BorderColor: =RGBA(0, 32, 96, 1)
+                    BorderStyle: =BorderStyle.None
+                    ChevronBackground: =RGBA(0, 0, 0, 0)
+                    ChevronFill: =RGBA(0, 32, 96, 1)
+                    ChevronHoverBackground: =
+                    DisplayFields: =["field_1"]
+                    Font: =Font.'Segoe UI'
+                    Height: =60
+                    HoverBorderColor: =
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    InputTextPlaceholder: =""
+                    Items: =All_Users.displayName
+                    SearchFields: =["field_1"]
+                    SearchItems: =Search(All_Users.displayName,cmb_Responsavel_Novo_Cadastro.SearchText,"field_1")
+                    SelectMultiple: =false
+                    Size: =16
+                    Width: =524
+                    ZIndex: =1
+
+            Label2_3 As label:
+                Color: =RGBA(0, 32, 96, 1)
+                DisplayMode: =DisplayMode.View
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                PaddingLeft: =0
+                Size: =16
+                Text: ="Responsável"
+                Width: =254
+                X: =58
+                Y: =643
+                ZIndex: =16
+
+        grp_valor_aquisicao_parte1 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =21
+
+            txt_Valor_Aquisicao_Novo_Cadastro As text:
+                BorderColor: =RGBA(0, 32, 96, 1)
+                ContentLanguage: ="pt-BR"
+                Default: =varFormatadoMoeda
+                Font: =Font.'Segoe UI'
+                Height: =60
+                HintText: ="1000,66"
+                OnChange: |-
+                    =UpdateContext(
+                        {   //O valor formatado
+                            varFormatadoMoeda: Text(
+                                Substitute(Self.Text,".",",")
+                            ),
+                            //O valor sem formatação
+                            varSemFormato:  Substitute(Self.Text,".",",")
+                        }
+                    );
+                    Reset(Self)
+                Size: =16
+                Tooltip: ="o valor é um número"
+                Width: =254
+                X: =328
+                Y: =841
+                ZIndex: =4
+
+            Label2_1 As label:
+                Color: =RGBA(0, 32, 96, 1)
+                DisplayMode: =DisplayMode.View
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                PaddingLeft: =0
+                Size: =16
+                Text: ="Valor de aquisição"
+                Width: =254
+                X: =328
+                Y: =811
+                ZIndex: =14
+
+        grp_data_aquisicao_parte1 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =21
+
+            borda_arrendodada_data_aquisicao As groupContainer.manualLayoutContainer:
+                BorderColor: =RGBA(0, 32, 96, 1)
+                BorderThickness: =2
+                DropShadow: =DropShadow.None
+                Height: =60
+                Width: =254
+                X: =58
+                Y: =841
+                ZIndex: =12
+
+                dte_Data_Aquisicao_Novo_Cadastro As datepicker:
+                    BorderColor: =RGBA(0, 32, 96, 1)
+                    BorderStyle: =BorderStyle.None
+                    DateTimeZone: =DateTimeZone.UTC
+                    DefaultDate: =
+                    Font: =Font.'Segoe UI'
+                    Height: =60
+                    IconBackground: =
+                    IconFill: =RGBA(0, 32, 96, 1)
+                    Language: ="pt-BR"
+                    Size: =16
+                    Width: =254
+                    ZIndex: =1
+
+            Label2 As label:
+                Color: =RGBA(0, 32, 96, 1)
+                DisplayMode: =DisplayMode.View
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Height: =30
+                PaddingLeft: =0
+                Size: =16
+                Text: ="Data de aquisição"
+                Width: =254
+                X: =58
+                Y: =811
+                ZIndex: =13
+

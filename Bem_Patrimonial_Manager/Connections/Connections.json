@@ -1,0 +1,52 @@
+{
+  "83eb5421-22e2-4311-89eb-dda429eff512": {
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Usuários do Office 365",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1649/1.0.1649.3368/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "UsuáriosdoOffice365"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "83eb5421-22e2-4311-89eb-dda429eff512"
+  },
+  "8accfedf-bf58-4493-aa87-2f034ed09f94": {
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/shgogna/globalperconnector-train1/1.0.1639.3312/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://apexpartners365.sharepoint.com/sites/TecnologiaAutomacao": {
+        "dataSources": {
+          "All_Users": {
+            "tableName": "ebfea40f-3f02-40b9-b319-b0cbceeef983"
+          },
+          "Bem_Patrimonial": {
+            "tableName": "a30db570-fecf-466a-9a7f-b02e28778472"
+          },
+          "Movimentacao_Bem_Patrimonial": {
+            "tableName": "a9e12cab-40d4-478d-97ed-18ba68187923"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "All_Users",
+      "Bem_Patrimonial",
+      "Movimentacao_Bem_Patrimonial"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "8accfedf-bf58-4493-aa87-2f034ed09f94"
+  }
+}
