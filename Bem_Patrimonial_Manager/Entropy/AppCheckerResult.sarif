@@ -2662,36 +2662,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.Logo_apex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.Logo_apex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Logo_apex",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App.cadastro"
                 }
               ],
@@ -2722,107 +2692,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.pesquisar"
+                  "fullyQualifiedName": "App.Logo_apex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.pesquisar",
+                  "fullyQualifiedName": "App.Logo_apex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "pesquisar",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.Movimentações"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.Movimentações",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Movimentações",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.Tela Inicial_Bem_Patrimoniado"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.Tela Inicial_Bem_Patrimoniado",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Tela Inicial_Bem_Patrimoniado",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedMediaResources",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.Modal Movimentação_Bem_Patrimoniado"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.Modal Movimentação_Bem_Patrimoniado",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Modal Movimentação_Bem_Patrimoniado",
+                "member": "Logo_apex",
                 "module": "App",
                 "type": "App"
               }
@@ -2872,17 +2752,77 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.Tela_Cadastro_Bem_Patrimonial"
+                  "fullyQualifiedName": "App.Modal Movimentação_Bem_Patrimoniado"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "App.Tela_Cadastro_Bem_Patrimonial",
+                  "fullyQualifiedName": "App.Modal Movimentação_Bem_Patrimoniado",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "Tela_Cadastro_Bem_Patrimonial",
+                "member": "Modal Movimentação_Bem_Patrimoniado",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.Movimentações"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.Movimentações",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Movimentações",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.pesquisar"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.pesquisar",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "pesquisar",
                 "module": "App",
                 "type": "App"
               }
@@ -2913,6 +2853,66 @@
               },
               "properties": {
                 "member": "Tela Cadastro - Informações Específicas",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.Tela Inicial_Bem_Patrimoniado"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.Tela Inicial_Bem_Patrimoniado",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Tela Inicial_Bem_Patrimoniado",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedMediaResources",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.Tela_Cadastro_Bem_Patrimonial"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.Tela_Cadastro_Bem_Patrimonial",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Tela_Cadastro_Bem_Patrimonial",
                 "module": "App",
                 "type": "App"
               }
