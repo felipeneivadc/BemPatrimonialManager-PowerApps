@@ -143,7 +143,7 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "09/25/2023 12:47:20",
+  "HeaderLastSavedDateTimeUTC": "09/25/2023 13:05:39",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "18323887-b6b6-41e5-a087-9882cf818d37": "\"/providers/microsoft.powerapps/apis/shared_azuread/connections/fcc7116e39a94decaf24dbba96814b9d\"",
@@ -186,15 +186,18 @@
   "OrderComponentMetadata": {},
   "OrderComponentTemplate": {},
   "OrderDataSource": {
-    "All_Users": 2,
+    "AAD Users": 10,
+    "AAD Users\\adduser_account_enabled": 2,
+    "AAD Users\\default.cds_aaduser_views": 3,
+    "All_Users": 4,
     "AzureAD": 1,
-    "Bem_Patrimonial": 3,
-    "col_Num_Patrimonio": 8,
-    "col_Num_Serie": 9,
-    "ComboBoxSample": 4,
-    "CustomGallerySample": 5,
-    "DropDownSample": 6,
-    "Movimentacao_Bem_Patrimonial": 7,
+    "Bem_Patrimonial": 5,
+    "col_Num_Patrimonio": 11,
+    "col_Num_Serie": 12,
+    "ComboBoxSample": 6,
+    "CustomGallerySample": 7,
+    "DropDownSample": 8,
+    "Movimentacao_Bem_Patrimonial": 9,
     "UsuáriosdoOffice365": 0
   },
   "OrderGroupControls": {
@@ -786,5 +789,5 @@
     },
     "DeserializationLoadTime": 2.7544109
   },
-  "WasLocalDatabaseReferencesEmpty": true
+  "WasLocalDatabaseReferencesEmpty": false
 }
