@@ -253,10 +253,11 @@
                     HoverBorderColor: =
                     HoverFill: =RGBA(0, 0, 0, 0)
                     InputTextPlaceholder: =""
+                    IsSearchable: =false
                     Items: =All_Users.displayName
                     PressedFill: =RGBA(0, 0, 0, 0)
                     SearchFields: =["field_1"]
-                    SearchItems: =Search(All_Users.displayName,cmb_Responsavel_Filtro_Tela_Consulta.SearchText,"field_1")
+                    SearchItems: =[]
                     SelectionFill: =RGBA(0, 0, 0, 0)
                     SelectMultiple: =false
                     Size: =16
