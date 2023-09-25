@@ -1,18 +1,4 @@
 {
-  "18323887-b6b6-41e5-a087-9882cf818d37": {
-    "connectionRef": {
-      "displayName": "Azure AD",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1626/1.0.1626.3238/azuread/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_azuread"
-    },
-    "datasets": {},
-    "dataSources": [
-      "AzureAD"
-    ],
-    "dependencies": {},
-    "dependents": [],
-    "id": "18323887-b6b6-41e5-a087-9882cf818d37"
-  },
   "83eb5421-22e2-4311-89eb-dda429eff512": {
     "connectionRef": {
       "apiTier": "Standard",
