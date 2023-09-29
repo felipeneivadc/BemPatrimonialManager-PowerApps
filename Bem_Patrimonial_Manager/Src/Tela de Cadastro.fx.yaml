@@ -18,7 +18,7 @@
                 =If(
                     IsBlank(cmb_Descricao_Novo_Cadastro.Selected.Value) ||
                     IsBlank(cmb_Status_Novo_Cadastro.Selected.Value) ||
-                    IsBlank(cmb_Localizacao_Novo_Cadastro.Selected.Value) ||
+                    IsBlank(cmb_Localizacao_Novo_Cadastro.Selected.Localidade) ||
                     IsBlank(txt_Num_Patrimonio_Novo_Cadastro.Text) ||
                     IsBlank(img_Bem_patrimoniado.Image),
                     DisplayMode.Disabled,
@@ -37,7 +37,7 @@
                        ValorAquisicao: txt_Valor_Aquisicao_Novo_Cadastro.Text,
                        CodigoBarras: txt_Num_Patrimonio_Novo_Cadastro.Text,
                        SerialNumber: txt_Serial_Number_Novo_Cadastro.Text,
-                       Localizacao: cmb_Localizacao_Novo_Cadastro.Selected.Value,
+                       Localizacao: cmb_Localizacao_Novo_Cadastro.Selected.Localidade,
                        ID_Responsavel: LookUp(All_Users, cmb_Responsavel_Novo_Cadastro.Selected.displayName = displayName,ID),
                        Imagem_Bem_Patrimoniado: img_Bem_patrimoniado.Image  
                     }
@@ -369,7 +369,7 @@
                 =If(
                     IsBlank(cmb_Descricao_Novo_Cadastro.Selected.Value) ||
                     IsBlank(cmb_Status_Novo_Cadastro.Selected.Value) ||
-                    IsBlank(cmb_Localizacao_Novo_Cadastro.Selected.Value),
+                    IsBlank(cmb_Localizacao_Novo_Cadastro.Selected.Localidade),
                     DisplayMode.Disabled,
                     DisplayMode.Edit
                 )
@@ -539,15 +539,16 @@
                     ChevronBackground: =RGBA(0, 0, 0, 0)
                     ChevronFill: =RGBA(0, 32, 96, 1)
                     ChevronHoverBackground: =
-                    DisplayFields: =["Value"]
+                    DisplayFields: =["field_1"]
                     Font: =Font.'Segoe UI'
                     Height: =60
                     HoverBorderColor: =
                     HoverFill: =RGBA(0, 0, 0, 0)
                     InputTextPlaceholder: =""
-                    Items: =["Vitória - 5º andar - Auditório","Vitória - 5º andar - Copa","Vitória - 5º andar - CPD","Vitória - 5º andar - Lounge 1","Vitória - 5º andar - Lounge 2","Vitória - 5º andar - Sala 2","Vitória - 5º andar - Sala 3","Vitória - 5º andar - Sala 4","Vitória - 5º andar - Sala 5","Vitória - 5º andar - Sala 6", "Vitória - 5º andar - Sala 7","Vitória - 5º andar - Sala de vivência","Vitória - 6º andar - Assessoria","Vitória - 6º andar - Copa","Vitória - 6º andar - Corporate","Vitória - 6º andar - CPD","Vitória - 6º andar - Gestora", "Vitória - 6º andar - MFO","Vitória - 6º andar - Portfolio Solutions", "Vitória - 6º andar - Sala de tecnologia","Vitória - 6º andar - Serviços financeiros","Vitória - 6º andar - Wealth","Vitória - 7º andar - Backoffice","Vitória - 7º andar - Cabine Telefônica","Vitória - 7º andar - Copa","Vitória - 7º andar - CPD","Vitória - 7º andar - Diretoria","Vitória - 7º andar - IB","Vitória - 7º andar - Mercados privados","Vitória - 7º andar - Middle office","Vitória - 7º andar - Real Estate","Vitória - 10º andar - Cabine Telefônica","Vitória - 10º andar - Copa","Vitória - 10º andar - CPD","Vitória - 10º andar - Folha Business","Vitória - 10º andar - Futura","Vitória - 10º andar - Marketing","Vitória - 10º andar - Produtora"]
-                    SearchFields: =["Value"]
-                    SearchItems: =Search(["Vitória - 5º andar - Auditório","Vitória - 5º andar - Copa","Vitória - 5º andar - CPD","Vitória - 5º andar - Lounge 1","Vitória - 5º andar - Lounge 2","Vitória - 5º andar - Sala 2","Vitória - 5º andar - Sala 3","Vitória - 5º andar - Sala 4","Vitória - 5º andar - Sala 5","Vitória - 5º andar - Sala 6", "Vitória - 5º andar - Sala 7","Vitória - 5º andar - Sala de vivência","Vitória - 6º andar - Assessoria","Vitória - 6º andar - Copa","Vitória - 6º andar - Corporate","Vitória - 6º andar - CPD","Vitória - 6º andar - Gestora", "Vitória - 6º andar - MFO","Vitória - 6º andar - Portfolio Solutions", "Vitória - 6º andar - Sala de tecnologia","Vitória - 6º andar - Serviços financeiros","Vitória - 6º andar - Wealth","Vitória - 7º andar - Backoffice","Vitória - 7º andar - Cabine Telefônica","Vitória - 7º andar - Copa","Vitória - 7º andar - CPD","Vitória - 7º andar - Diretoria","Vitória - 7º andar - IB","Vitória - 7º andar - Mercados privados","Vitória - 7º andar - Middle office","Vitória - 7º andar - Real Estate","Vitória - 10º andar - Cabine Telefônica","Vitória - 10º andar - Copa","Vitória - 10º andar - CPD","Vitória - 10º andar - Folha Business","Vitória - 10º andar - Futura","Vitória - 10º andar - Marketing","Vitória - 10º andar - Produtora"],cmb_Localizacao_Novo_Cadastro.SearchText,"Value")
+                    IsSearchable: =false
+                    Items: =Ativos_Localidade.Localidade
+                    SearchFields: =["field_1"]
+                    SearchItems: =[]
                     SelectMultiple: =false
                     Size: =16
                     Width: =524

@@ -31,6 +31,9 @@
           "All_Users": {
             "tableName": "ebfea40f-3f02-40b9-b319-b0cbceeef983"
           },
+          "Ativos_Localidade": {
+            "tableName": "1b83a1ea-1c5f-4130-833c-bf879794b9cc"
+          },
           "Bem_Patrimonial": {
             "tableName": "a30db570-fecf-466a-9a7f-b02e28778472"
           },
@@ -43,7 +46,8 @@
     "dataSources": [
       "All_Users",
       "Bem_Patrimonial",
-      "Movimentacao_Bem_Patrimonial"
+      "Movimentacao_Bem_Patrimonial",
+      "Ativos_Localidade"
     ],
     "dependencies": {},
     "dependents": [],
