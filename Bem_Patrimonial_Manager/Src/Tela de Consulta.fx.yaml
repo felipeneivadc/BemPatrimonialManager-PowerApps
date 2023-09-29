@@ -171,7 +171,7 @@
                     PaddingRight: =0
                     PaddingTop: =0
                     Text: =ThisItem.Localizacao
-                    Width: =198
+                    Width: =288
                     X: =50
                     Y: =218
                     ZIndex: =9
