@@ -16,7 +16,7 @@
         btn_Finalizar_Novo_Cadastro As button:
             DisplayMode: |-
                 =If(
-                    IsBlank(cmb_Descricao_Novo_Cadastro.Selected.Value) ||
+                    IsBlank(cmb_Descricao_Novo_Cadastro.Selected.Ativo) ||
                     IsBlank(cmb_Status_Novo_Cadastro.Selected.Value) ||
                     IsBlank(cmb_Localizacao_Novo_Cadastro.Selected.Localidade) ||
                     IsBlank(txt_Num_Patrimonio_Novo_Cadastro.Text) ||
@@ -31,7 +31,7 @@
                     Bem_Patrimonial,
                     Defaults(Bem_Patrimonial),
                     {
-                       Descricao: cmb_Descricao_Novo_Cadastro.Selected.Value,
+                       Descricao: cmb_Descricao_Novo_Cadastro.Selected.Ativo,
                        Status: cmb_Status_Novo_Cadastro.Selected.Value,
                        DataAquisicao: Text(DateValue(dte_Data_Aquisicao_Novo_Cadastro.SelectedDate,"pt-BR"),DateTimeFormat.UTC),
                        ValorAquisicao: txt_Valor_Aquisicao_Novo_Cadastro.Text,
@@ -367,7 +367,7 @@
         btn_Continuar_Novo_Cadastro As button:
             DisplayMode: |-
                 =If(
-                    IsBlank(cmb_Descricao_Novo_Cadastro.Selected.Value) ||
+                    IsBlank(cmb_Descricao_Novo_Cadastro.Selected.Ativo) ||
                     IsBlank(cmb_Status_Novo_Cadastro.Selected.Value) ||
                     IsBlank(cmb_Localizacao_Novo_Cadastro.Selected.Localidade),
                     DisplayMode.Disabled,
@@ -435,16 +435,17 @@
                     ChevronBackground: =RGBA(0, 0, 0, 0)
                     ChevronFill: =RGBA(0, 32, 96, 1)
                     ChevronHoverBackground: =
-                    DisplayFields: =["Value"]
+                    DisplayFields: =["Title"]
                     Font: =Font.'Segoe UI'
                     Height: =60
                     HoverBorderColor: =
                     HoverFill: =RGBA(0, 0, 0, 0)
                     InputTextPlaceholder: =""
-                    Items: =["Tela", "Armário","Notebook"]
+                    IsSearchable: =false
+                    Items: =Ativos_Localidade.Ativo
                     PressedFill: =RGBA(0, 0, 0, 0)
-                    SearchFields: =["Value"]
-                    SearchItems: =Search(["Tela", "Armário","Notebook"],cmb_Descricao_Novo_Cadastro.SearchText,"Value")
+                    SearchFields: =["Title"]
+                    SearchItems: =[]
                     SelectMultiple: =false
                     Size: =16
                     Width: =524
