@@ -16,7 +16,7 @@
             Items: |-
                 =Filter(
                     Bem_Patrimonial,
-                    IsBlank(cmb_Descricao_Filtro_Tela_Consulta.Selected.Value) || cmb_Descricao_Filtro_Tela_Consulta.Selected.Value = Descricao,
+                    IsBlank(cmb_Descricao_Filtro_Tela_Consulta.Selected.Ativo) || cmb_Descricao_Filtro_Tela_Consulta.Selected.Ativo = Descricao,
                     IsBlank(cmb_Responsavel_Filtro_Tela_Consulta.Selected.displayName) || LookUp(All_Users, cmb_Responsavel_Filtro_Tela_Consulta.Selected.displayName = displayName,ID) = ID_Responsavel,
                     StartsWith(CodigoBarras,txt_Num_Patrimonio_Filtro_Tela_Consulta.Text)
                 )
@@ -299,16 +299,16 @@
                     ChevronBackground: =RGBA(0, 0, 0, 0)
                     ChevronFill: =RGBA(0, 32, 96, 1)
                     ChevronHoverBackground: =
-                    DisplayFields: =["Value"]
+                    DisplayFields: =["Title"]
                     Font: =Font.'Segoe UI'
                     Height: =60
                     HoverBorderColor: =
                     HoverFill: =RGBA(0, 0, 0, 0)
                     InputTextPlaceholder: =""
-                    Items: =["Tela", "Armário"]
+                    Items: =Ativos_Localidade.Ativo
                     PressedFill: =RGBA(0, 0, 0, 0)
-                    SearchFields: =["Value"]
-                    SearchItems: =Search(["Tela", "Armário"],cmb_Descricao_Filtro_Tela_Consulta.SearchText,"Value")
+                    SearchFields: =["Title"]
+                    SearchItems: =Search(Ativos_Localidade.Ativo,cmb_Descricao_Filtro_Tela_Consulta.SearchText,"Title")
                     SelectionColor: =RGBA(0, 0, 0, 0)
                     SelectionFill: =RGBA(0, 0, 0, 0)
                     SelectMultiple: =false
