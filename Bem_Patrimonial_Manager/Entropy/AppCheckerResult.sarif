@@ -14,366 +14,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.ico_voltar.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.ico_voltar.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Tela de Cadastro",
-                "type": "'Tela de Cadastro'.Container_Parte1.ico_voltar"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.ico_voltar.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.ico_voltar.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "Tela de Cadastro",
-                "type": "'Tela de Cadastro'.Container_Parte1.ico_voltar"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_nome_ativo.cmb_Descricao_Novo_Cadastro.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_nome_ativo.cmb_Descricao_Novo_Cadastro.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Tela de Cadastro",
-                "type": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_nome_ativo.cmb_Descricao_Novo_Cadastro"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_status.cmb_Status_Novo_Cadastro.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_status.cmb_Status_Novo_Cadastro.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Tela de Cadastro",
-                "type": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_status.cmb_Status_Novo_Cadastro"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_localizacao.cmb_Localizacao_Novo_Cadastro.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_localizacao.cmb_Localizacao_Novo_Cadastro.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Tela de Cadastro",
-                "type": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_localizacao.cmb_Localizacao_Novo_Cadastro"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_responsavel.cmb_Responsavel_Novo_Cadastro.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_responsavel.cmb_Responsavel_Novo_Cadastro.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Tela de Cadastro",
-                "type": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_responsavel.cmb_Responsavel_Novo_Cadastro"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_data_aquisicao.dte_Data_Aquisicao_Novo_Cadastro.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_data_aquisicao.dte_Data_Aquisicao_Novo_Cadastro.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Tela de Cadastro",
-                "type": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_data_aquisicao.dte_Data_Aquisicao_Novo_Cadastro"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.txt_Valor_Aquisicao_Novo_Cadastro.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.txt_Valor_Aquisicao_Novo_Cadastro.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Tela de Cadastro",
-                "type": "'Tela de Cadastro'.Container_Parte1.txt_Valor_Aquisicao_Novo_Cadastro"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.sld_format_moeda.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.sld_format_moeda.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Tela de Cadastro",
-                "type": "'Tela de Cadastro'.Container_Parte1.sld_format_moeda"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte2.AddMediaButton3.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte2.AddMediaButton3.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Tela de Cadastro",
-                "type": "'Tela de Cadastro'.Container_Parte2.AddMediaButton3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte2.txt_Serial_Number_Novo_Cadastro.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte2.txt_Serial_Number_Novo_Cadastro.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Tela de Cadastro",
-                "type": "'Tela de Cadastro'.Container_Parte2.txt_Serial_Number_Novo_Cadastro"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte2.txt_Num_Patrimonio_Novo_Cadastro.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte2.txt_Num_Patrimonio_Novo_Cadastro.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Tela de Cadastro",
-                "type": "'Tela de Cadastro'.Container_Parte2.txt_Num_Patrimonio_Novo_Cadastro"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 0
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "'Tela de Consulta'.Container_Consulta.txt_Num_Patrimonio_Filtro_Tela_Consulta.AccessibleLabel"
                 }
               ],
@@ -1004,6 +644,366 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.ico_voltar.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.ico_voltar.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Tela de Cadastro",
+                "type": "'Tela de Cadastro'.Container_Parte1.ico_voltar"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.ico_voltar.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.ico_voltar.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Tela de Cadastro",
+                "type": "'Tela de Cadastro'.Container_Parte1.ico_voltar"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_nome_ativo.cmb_Descricao_Novo_Cadastro.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_nome_ativo.cmb_Descricao_Novo_Cadastro.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Tela de Cadastro",
+                "type": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_nome_ativo.cmb_Descricao_Novo_Cadastro"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_status.cmb_Status_Novo_Cadastro.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_status.cmb_Status_Novo_Cadastro.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Tela de Cadastro",
+                "type": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_status.cmb_Status_Novo_Cadastro"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_localizacao.cmb_Localizacao_Novo_Cadastro.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_localizacao.cmb_Localizacao_Novo_Cadastro.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Tela de Cadastro",
+                "type": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_localizacao.cmb_Localizacao_Novo_Cadastro"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_responsavel.cmb_Responsavel_Novo_Cadastro.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_responsavel.cmb_Responsavel_Novo_Cadastro.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Tela de Cadastro",
+                "type": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_responsavel.cmb_Responsavel_Novo_Cadastro"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_data_aquisicao.dte_Data_Aquisicao_Novo_Cadastro.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_data_aquisicao.dte_Data_Aquisicao_Novo_Cadastro.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Tela de Cadastro",
+                "type": "'Tela de Cadastro'.Container_Parte1.borda_arrendodada_data_aquisicao.dte_Data_Aquisicao_Novo_Cadastro"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.txt_Valor_Aquisicao_Novo_Cadastro.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.txt_Valor_Aquisicao_Novo_Cadastro.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Tela de Cadastro",
+                "type": "'Tela de Cadastro'.Container_Parte1.txt_Valor_Aquisicao_Novo_Cadastro"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.sld_format_moeda.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte1.sld_format_moeda.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Tela de Cadastro",
+                "type": "'Tela de Cadastro'.Container_Parte1.sld_format_moeda"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte2.AddMediaButton3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte2.AddMediaButton3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Tela de Cadastro",
+                "type": "'Tela de Cadastro'.Container_Parte2.AddMediaButton3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte2.txt_Serial_Number_Novo_Cadastro.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte2.txt_Serial_Number_Novo_Cadastro.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Tela de Cadastro",
+                "type": "'Tela de Cadastro'.Container_Parte2.txt_Serial_Number_Novo_Cadastro"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte2.txt_Num_Patrimonio_Novo_Cadastro.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Tela de Cadastro'.Container_Parte2.txt_Num_Patrimonio_Novo_Cadastro.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Tela de Cadastro",
+                "type": "'Tela de Cadastro'.Container_Parte2.txt_Num_Patrimonio_Novo_Cadastro"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.cadastro"
                 }
               ],
@@ -1274,36 +1274,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Tela de Cadastro'.varSemFormato"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Tela de Cadastro'.varSemFormato",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "varSemFormato",
-                "module": "Tela de Cadastro",
-                "type": "'Tela de Cadastro'"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "'Tela de Consulta'.locTicket"
                 }
               ],
@@ -1418,6 +1388,36 @@
           },
           "ruleId": "app-UnusedVariables",
           "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Tela de Cadastro'.varSemFormato"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Tela de Cadastro'.varSemFormato",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varSemFormato",
+                "module": "Tela de Cadastro",
+                "type": "'Tela de Cadastro'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 3
         }
       ],
       "tool": {
@@ -1494,7 +1494,7 @@
               }
             }
           ],
-          "version": "1.334"
+          "version": "1.335"
         }
       }
     }

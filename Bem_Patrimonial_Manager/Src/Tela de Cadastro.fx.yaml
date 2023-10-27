@@ -441,11 +441,10 @@
                     HoverBorderColor: =
                     HoverFill: =RGBA(0, 0, 0, 0)
                     InputTextPlaceholder: =""
-                    IsSearchable: =false
                     Items: =Ativos_Localidade.Ativo
                     PressedFill: =RGBA(0, 0, 0, 0)
                     SearchFields: =["Title"]
-                    SearchItems: =[]
+                    SearchItems: =Search(Ativos_Localidade.Ativo,cmb_Descricao_Novo_Cadastro.SearchText,"Title")
                     SelectMultiple: =false
                     Size: =16
                     Width: =524
@@ -494,9 +493,10 @@
                     HoverBorderColor: =
                     HoverFill: =RGBA(0, 0, 0, 0)
                     InputTextPlaceholder: =""
+                    IsSearchable: =false
                     Items: =["Manutenção", "Em uso", "Em estoque", "Descartado", "Vendido", "Doado"]
                     SearchFields: =["Value"]
-                    SearchItems: =Search(["Manutenção", "Em uso", "Em estoque", "Descartado", "Vendido", "Doado"],cmb_Status_Novo_Cadastro.SearchText,"Value")
+                    SearchItems: =[]
                     SelectionFill: =RGBA(0, 0, 0, 0)
                     SelectMultiple: =false
                     Size: =16
@@ -546,10 +546,9 @@
                     HoverBorderColor: =
                     HoverFill: =RGBA(0, 0, 0, 0)
                     InputTextPlaceholder: =""
-                    IsSearchable: =false
                     Items: =Ativos_Localidade.Localidade
                     SearchFields: =["field_1"]
-                    SearchItems: =[]
+                    SearchItems: =Search(Ativos_Localidade.Localidade,cmb_Localizacao_Novo_Cadastro.SearchText,"field_1")
                     SelectMultiple: =false
                     Size: =16
                     Width: =524
