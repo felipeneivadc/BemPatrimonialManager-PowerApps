@@ -136,12 +136,13 @@
                     Align: =Align.Center
                     AutoHeight: =true
                     Color: =RGBA(0, 0, 0, 1)
-                    Height: =60
+                    Height: =90
                     OnSelect: =Select(Parent)
                     PaddingBottom: =0
                     PaddingRight: =0
                     PaddingTop: =0
                     Text: =ThisItem.Descricao
+                    Width: =232
                     X: =288
                     Y: =68
                     ZIndex: =1
@@ -149,8 +150,8 @@
                 Image1 As image:
                     Height: =50
                     Image: =ThisItem.Imagem_Bem_Patrimoniado
-                    Width: =50
-                    X: =338
+                    Width: =77
+                    X: =365
                     Y: =18
                     ZIndex: =11
 
