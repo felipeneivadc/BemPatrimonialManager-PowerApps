@@ -136,22 +136,22 @@
                     Align: =Align.Center
                     AutoHeight: =true
                     Color: =RGBA(0, 0, 0, 1)
-                    Height: =90
+                    Height: =45
                     OnSelect: =Select(Parent)
                     PaddingBottom: =0
                     PaddingRight: =0
                     PaddingTop: =0
                     Text: =ThisItem.Descricao
-                    Width: =232
-                    X: =288
-                    Y: =68
+                    Width: =239
+                    X: =271
+                    Y: =66
                     ZIndex: =1
 
                 Image1 As image:
-                    Height: =50
+                    Height: =48
                     Image: =ThisItem.Imagem_Bem_Patrimoniado
-                    Width: =77
-                    X: =365
+                    Width: =74
+                    X: =361
                     Y: =18
                     ZIndex: =11
 
@@ -172,8 +172,8 @@
                     PaddingRight: =0
                     PaddingTop: =0
                     Text: =ThisItem.Localizacao
-                    Width: =288
-                    X: =50
+                    Width: =374
+                    X: =45
                     Y: =218
                     ZIndex: =9
 
@@ -183,7 +183,7 @@
                     Height: =30
                     Icon: =Icon.Waypoint
                     OnSelect: =
-                    Width: =30
+                    Width: =39
                     X: =10
                     Y: =221
                     ZIndex: =10
